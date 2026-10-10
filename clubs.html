@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Greatest Clubs | Champions League History</title>
+
+    <link rel="stylesheet" href="clubs.css">
+    <script src="clubs.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <a href="index.html" class="brand">
+            <span class="brand-icon">UCL</span>
+            <span>CHAMPIONS LEAGUE HISTORY</span>
+        </a>
+
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="history.html">History</a>
+            <a href="clubs.html" class="active">Greatest Clubs</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <p class="eyebrow">EUROPEAN FOOTBALL LEGENDS</p>
+            <h1>The Greatest Clubs</h1>
+            <p>
+                Discover the legendary clubs that have shaped European
+                football through historic victories and unforgettable nights.
+            </p>
+        </section>
+
+        <section class="clubs-section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">THE EUROPEAN ELITE</p>
+                    <h2>Legendary European Clubs</h2>
+                </div>
+
+                <p id="clubCount" class="club-count">8 clubs</p>
+            </div>
+
+            <div class="club-controls">
+                <input
+                    type="search"
+                    id="clubSearch"
+                    placeholder="Search clubs..."
+                    aria-label="Search clubs"
+                >
+
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">
+                        All
+                    </button>
+
+                    <button class="filter-btn" data-filter="Spain">
+                        Spain
+                    </button>
+
+                    <button class="filter-btn" data-filter="Italy">
+                        Italy
+                    </button>
+
+                    <button class="filter-btn" data-filter="England">
+                        England
+                    </button>
+
+                    <button class="filter-btn" data-filter="Germany">
+                        Germany
+                    </button>
+                </div>
+            </div>
+
+            <div id="clubGrid" class="club-grid"></div>
+
+            <p id="noResults" class="no-results" hidden>
+                No clubs found. Try another search.
+            </p>
+
+        </section>
+
+        <section class="history-note">
+            <p class="eyebrow">A LEGACY OF EXCELLENCE</p>
+            <h2>More than trophies</h2>
+            <p>
+                Every club has its own story: legendary players, great managers,
+                dramatic finals, and moments that became part of football history.
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Champions League History</p>
+        <p>An exploration of Europe's greatest club competition.</p>
+    </footer>
+
+</body>
+</html>

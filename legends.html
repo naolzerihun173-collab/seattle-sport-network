@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Champions League Legends | History Archive</title>
+
+    <meta name="description"
+          content="Discover the achievements, famous moments and records of five Champions League legends.">
+
+    <link rel="stylesheet" href="legends.css">
+
+    <script src="legends.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+
+        <a href="index.html" class="brand">
+            <span class="brand-icon">UCL</span>
+
+            <span class="brand-text">
+                <strong>CHAMPIONS LEAGUE</strong>
+                <small>HISTORY ARCHIVE</small>
+            </span>
+        </a>
+
+        <nav class="main-nav">
+            <a href="index.html" class="home-btn">Home</a>
+            <a href="history.html">History</a>
+            <a href="clubs.html">Greatest Clubs</a>
+            <a href="legends.html" class="active">Legends</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">THE GREATS OF EUROPE</p>
+
+                <h1>
+                    Legends
+                    <span>Never Fade.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover the players who defined Europe's greatest
+                    club competition through unforgettable goals,
+                    historic achievements and remarkable records.
+                </p>
+
+                <a href="#legends" class="gold-btn">
+                    EXPLORE THE LEGENDS
+                    <span>↓</span>
+                </a>
+
+                <div class="hero-stats">
+
+                    <div>
+                        <strong>05</strong>
+                        <span>Football Legends</span>
+                    </div>
+
+                    <div>
+                        <strong>100+</strong>
+                        <span>Years of Combined History</span>
+                    </div>
+
+                    <div>
+                        <strong>UCL</strong>
+                        <span>European Glory</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Cristiano_Ronaldo_2018.jpg"
+                    alt="Cristiano Ronaldo"
+                    onerror="this.style.display='none'; this.parentElement.classList.add('image-fallback');"
+                >
+
+                <div class="hero-image-overlay"></div>
+
+                <div class="hero-image-caption">
+                    <span>FEATURED LEGEND</span>
+                    <h2>Cristiano Ronaldo</h2>
+                    <p>The Champions League's leading goalscorer</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LEGENDS INTRO ================= -->
+
+        <section class="legends-section" id="legends">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">THE HISTORY MAKERS</p>
+                    <h2>Legends & Records</h2>
+
+                    <p class="section-description">
+                        Their achievements. Their greatest moments.
+                        The records that made history.
+                    </p>
+                </div>
+
+                <div class="legend-count">
+                    <strong id="legendCount">05</strong>
+                    <span>LEGENDS</span>
+                </div>
+
+            </div>
+
+
+            <!-- ================= SEARCH ================= -->
+
+            <div class="controls">
+
+                <div class="search-box">
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        type="search"
+                        id="legendSearch"
+                        placeholder="Search players, achievements or records..."
+                        aria-label="Search legends"
+                    >
+                </div>
+
+                <div class="filter-buttons">
+
+                    <button
+                        class="filter-btn active"
+                        data-filter="all"
+                        type="button"
+                    >
+                        All Legends
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="forward"
+                        type="button"
+                    >
+                        Forwards
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="midfielder"
+                        type="button"
+                    >
+                        Midfielders
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="defender"
+                        type="button"
+                    >
+                        Defenders
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= PLAYER CARDS ================= -->
+
+            <div class="legend-grid" id="legendGrid">
+
+                <!-- JavaScript inserts the five player cards here. -->
+
+            </div>
+
+            <div class="no-results" id="noResults" hidden>
+                <h3>No legends found</h3>
+                <p>Try another name or search term.</p>
+            </div>
+
+        </section>
+
+
+        <!-- ================= CLOSING SECTION ================= -->
+
+        <section class="closing-section">
+
+            <p class="eyebrow">MORE THAN FOOTBALL</p>
+
+            <h2>Greatness Is Remembered.</h2>
+
+            <p>
+                Every generation has its heroes. Every era has its
+                unforgettable moments. These legends helped write
+                the history of European football.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="footer-brand">
+            CHAMPIONS LEAGUE
+            <span>HISTORY ARCHIVE</span>
+        </div>
+
+        <p>
+            A football history project by Seattle Academy.
+        </p>
+
+        <p class="footer-note">
+            Historical statistics are based on the UEFA Champions
+            League and European Cup, with competition formats
+            distinguished where relevant.
+        </p>
+
+        <p class="copyright">
+            © 2026 Champions League History Archive
+        </p>
+
+    </footer>
+
+</body>
+</html>

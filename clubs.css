@@ -1,0 +1,834 @@
+
+/* ==================================================
+   CHAMPIONS LEAGUE HISTORY — CLUBS PAGE
+================================================== */
+
+/* ---------- COLOR VARIABLES ---------- */
+
+:root {
+    --navy: #06142e;
+    --navy-light: #0b1830;
+    --card-bg: #0d1c36;
+    --blue: #1856d6;
+    --blue-light: #70a5ff;
+    --gold: #D4AF37;
+    --white: #ffffff;
+    --text: #d6deed;
+    --muted: #93a5c2;
+    --border: rgba(255, 255, 255, 0.1);
+    --gold-border: rgba(212, 175, 55, 0.3);
+}
+
+/* ---------- RESET ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--navy);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ==================================================
+   HEADER AND NAVIGATION
+================================================== */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding: 18px 5%;
+    background: #071225;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Website brand */
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border: 2px solid var(--gold);
+    border-radius: 10px;
+    color: var(--gold);
+    font-size: 0.95rem;
+    font-weight: 900;
+}
+
+/* Navigation aligned to the right */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-left: auto;
+}
+
+.main-nav a {
+    display: inline-block;
+    padding: 9px 14px;
+    border-radius: 7px;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: var(--gold);
+}
+
+/* Home button — visible gold style */
+
+.main-nav a[href="index.html"] {
+    padding: 10px 22px;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 800;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
+}
+
+.main-nav a[href="index.html"]:hover {
+    background: transparent;
+    color: var(--gold);
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.3);
+}
+
+/* Current page */
+
+.main-nav a.active {
+    color: var(--gold);
+}
+
+/* Keep the Home button gold even if a general nav rule changes */
+
+.main-nav a[href="index.html"]:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 3px;
+}
+
+/* ==================================================
+   MAIN PAGE
+================================================== */
+
+main {
+    width: min(1400px, 92%);
+    margin: 0 auto;
+    padding: 35px 0 60px;
+}
+
+/* ---------- HERO ---------- */
+
+.page-hero {
+    padding: 45px 0 40px;
+}
+
+.eyebrow {
+    margin-bottom: 12px;
+    color: var(--gold);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.page-hero h1 {
+    margin-bottom: 18px;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 900;
+    line-height: 1.15;
+}
+
+.page-hero > p:last-child {
+    max-width: 750px;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* ---------- CLUB SECTION ---------- */
+
+.clubs-section {
+    margin-top: 20px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    line-height: 1.3;
+}
+
+.club-count {
+    flex-shrink: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* ---------- SEARCH AND FILTERS ---------- */
+
+.club-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+#clubSearch {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+    background: var(--navy-light);
+    color: var(--white);
+}
+
+#clubSearch::placeholder {
+    color: #8191aa;
+}
+
+#clubSearch:focus {
+    border-color: var(--blue-light);
+    box-shadow: 0 0 0 3px rgba(112, 165, 255, 0.1);
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 9px 17px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--navy-light);
+    color: var(--text);
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.filter-btn.active {
+    border-color: var(--blue);
+    background: var(--blue);
+    color: var(--white);
+}
+
+/* ==================================================
+   CLUB GRID AND CARDS
+================================================== */
+
+#clubGrid,
+.club-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    gap: 22px;
+}
+
+.club-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--card-bg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.club-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold-border);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- GOLDEN CLUB NAMES ---------- */
+
+.club-crest {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 115px;
+    padding: 22px 14px 10px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: center;
+}
+
+.club-crest img {
+    display: none;
+}
+
+.crest-fallback {
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--gold);
+    font-size: clamp(1.05rem, 1.6vw, 1.4rem);
+    font-weight: 800;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+    text-align: center;
+}
+
+/* ---------- CLUB INFORMATION ---------- */
+
+.club-info,
+.club-content {
+    padding: 18px;
+}
+
+.club-country,
+.club-meta {
+    margin-bottom: 5px;
+    color: var(--blue-light);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.club-info h2,
+.club-content h2 {
+    margin-bottom: 4px;
+    color: var(--gold);
+    font-size: 1.25rem;
+    line-height: 1.35;
+}
+
+.club-nickname {
+    margin-bottom: 16px;
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-style: italic;
+}
+
+/* ---------- EUROPEAN CUP STATISTICS ---------- */
+
+.club-stat,
+.club-titles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 14px 0;
+    padding: 12px;
+    border: 1px solid var(--gold-border);
+    border-radius: 8px;
+    background: rgba(212, 175, 55, 0.06);
+    color: var(--text);
+    font-size: 0.88rem;
+}
+
+.club-stat strong,
+.club-titles strong {
+    color: var(--gold);
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+/* ---------- CLUB SUMMARY ---------- */
+
+.club-summary {
+    margin: 14px 0 18px;
+    color: var(--text);
+    font-size: 0.9rem;
+    line-height: 1.75;
+}
+
+/* ---------- EXPLORE HISTORY BUTTON ---------- */
+
+.club-details-btn {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px 14px;
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--gold);
+    font-weight: 700;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.club-details-btn:hover {
+    transform: translateY(-2px);
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.club-details-btn:focus-visible {
+    outline: 2px solid var(--blue-light);
+    outline-offset: 3px;
+}
+
+/* ==================================================
+   EXPLORE CLUB HISTORY
+================================================== */
+
+.club-history[hidden],
+.club-details[hidden] {
+    display: none !important;
+}
+
+.club-history,
+.club-details {
+    margin-top: 22px;
+    padding: 22px;
+    overflow: hidden;
+    border: 1px solid var(--gold-border);
+    border-radius: 12px;
+    background: linear-gradient(145deg, #0b1830, #071225);
+    color: var(--text);
+    line-height: 1.8;
+    animation: historyReveal 0.3s ease;
+}
+
+/* ---------- HISTORY INTRODUCTION ---------- */
+
+.history-heading {
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--gold-border);
+}
+
+.history-label {
+    color: var(--gold);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.history-heading h3 {
+    margin: 8px 0;
+    color: var(--gold);
+    font-size: 1.5rem;
+    line-height: 1.35;
+}
+
+.history-subtitle {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* ---------- HISTORY FACTS ---------- */
+
+.history-facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.history-fact {
+    min-width: 0;
+    padding: 13px 10px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.fact-label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--muted);
+    font-size: 0.72rem;
+}
+
+.history-fact strong {
+    display: block;
+    color: var(--gold);
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+}
+
+/* ---------- HISTORY TEXT ---------- */
+
+.club-history h3,
+.club-details h3 {
+    margin: 24px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+    color: var(--gold);
+    font-size: 1.15rem;
+    line-height: 1.4;
+}
+
+.club-history p,
+.club-details p {
+    margin: 0 0 14px;
+    color: #c4cee0;
+    font-size: 0.94rem;
+}
+
+/* ---------- HISTORY TIMELINE ---------- */
+
+.history-timeline {
+    position: relative;
+    margin: 16px 0 20px;
+    padding-left: 24px;
+    border-left: 2px solid rgba(212, 175, 55, 0.35);
+    list-style: none;
+}
+
+.history-timeline li {
+    position: relative;
+    margin: 0 0 17px;
+    padding-left: 8px;
+    color: #c4cee0;
+    font-size: 0.92rem;
+    line-height: 1.8;
+}
+
+.history-timeline li:last-child {
+    margin-bottom: 0;
+}
+
+.history-timeline li::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: -31px;
+    width: 10px;
+    height: 10px;
+    border: 3px solid #0b1830;
+    border-radius: 50%;
+    background: var(--gold);
+}
+
+/* ---------- HISTORY LISTS ---------- */
+
+.club-history ul,
+.club-history ol,
+.club-details ul,
+.club-details ol {
+    margin: 10px 0 18px;
+    padding-left: 22px;
+}
+
+.club-history li,
+.club-details li {
+    margin-bottom: 8px;
+    color: #c4cee0;
+}
+
+.club-history strong,
+.club-history b,
+.club-details strong,
+.club-details b {
+    color: var(--gold);
+}
+
+/* ---------- HISTORY LINKS ---------- */
+
+.club-history a,
+.club-details a {
+    color: var(--blue-light);
+    text-decoration: none;
+}
+
+.club-history a:hover,
+.club-details a:hover {
+    color: var(--gold);
+    text-decoration: underline;
+}
+
+/* ---------- HISTORY FOOTNOTE ---------- */
+
+.history-footnote {
+    margin-top: 22px !important;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    color: #8293ae !important;
+    font-size: 0.78rem !important;
+}
+
+/* ---------- OLDER HISTORY CLASS SUPPORT ---------- */
+
+.club-details h4 {
+    margin: 18px 0 8px;
+    color: var(--gold);
+}
+
+/* ---------- NO RESULTS ---------- */
+
+#noResults[hidden],
+.no-results[hidden] {
+    display: none !important;
+}
+
+#noResults,
+.no-results {
+    margin: 30px 0;
+    padding: 28px 18px;
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* ---------- HISTORY NOTE ---------- */
+
+.history-note {
+    margin-top: 70px;
+    padding: 35px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--navy-light);
+}
+
+.history-note h2 {
+    margin-bottom: 12px;
+    font-size: 1.8rem;
+}
+
+.history-note > p:last-child {
+    max-width: 750px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* ---------- FOOTER ---------- */
+
+.site-footer {
+    padding: 28px 5%;
+    border-top: 1px solid var(--border);
+    background: #071225;
+    color: var(--muted);
+    text-align: center;
+}
+
+.site-footer p:first-child {
+    margin-bottom: 5px;
+    color: var(--white);
+    font-weight: 700;
+}
+
+/* ---------- ANIMATION ---------- */
+
+@keyframes historyReveal {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================================================
+   RESPONSIVE DESIGN
+================================================== */
+
+@media (max-width: 1100px) {
+    #clubGrid,
+    .club-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+@media (max-width: 800px) {
+    .site-header {
+        gap: 18px;
+    }
+
+    .main-nav {
+        gap: 6px;
+    }
+
+    .main-nav a {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+
+    #clubGrid,
+    .club-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .history-facts {
+        grid-template-columns: 1fr;
+    }
+
+    .history-note {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 520px) {
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 4%;
+    }
+
+    .brand {
+        font-size: 0.8rem;
+    }
+
+    .brand-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: flex-end;
+        margin-left: 0;
+        gap: 8px;
+    }
+
+    .main-nav a {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+
+    .main-nav a[href="index.html"] {
+        padding: 9px 16px;
+    }
+
+    main {
+        width: 92%;
+        padding-top: 22px;
+    }
+
+    .page-hero {
+        padding: 30px 0;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    #clubGrid,
+    .club-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .club-crest {
+        min-height: 90px;
+    }
+
+    .crest-fallback {
+        font-size: 1.3rem;
+    }
+
+    .club-info,
+    .club-content {
+        padding: 18px;
+    }
+
+    .club-history,
+    .club-details {
+        padding: 15px;
+    }
+
+    .history-heading h3 {
+        font-size: 1.25rem;
+    }
+
+    .club-history p,
+    .club-details p,
+    .history-timeline li {
+        font-size: 0.88rem;
+    }
+
+    .filter-buttons {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .history-note {
+        padding: 20px;
+    }
+}
+
+/* ---------- REDUCED MOTION ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

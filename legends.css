@@ -1,0 +1,1084 @@
+
+/* ==================================================
+   CHAMPIONS LEAGUE LEGENDS
+   NAVY BLUE + GOLD DESIGN
+================================================== */
+
+
+/* ================= COLOR VARIABLES ================= */
+
+:root {
+    --navy: #06142e;
+    --navy-dark: #040d1e;
+    --navy-light: #0b1c38;
+    --card-bg: #0c1d38;
+
+    --gold: #d4af37;
+    --gold-light: #f0d77a;
+
+    --white: #ffffff;
+    --text: #d5deed;
+    --muted: #94a5c0;
+
+    --border: rgba(255, 255, 255, 0.10);
+    --gold-border: rgba(212, 175, 55, 0.30);
+}
+
+
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--navy);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.site-header {
+    min-height: 82px;
+    padding: 15px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    background: #050f22;
+    border-bottom: 1px solid var(--border);
+}
+
+
+/* Brand */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.brand-icon {
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+    place-items: center;
+
+    border: 2px solid var(--gold);
+    border-radius: 9px;
+
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+}
+
+.brand-text strong {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.brand-text small {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+
+/* Navigation */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 9px;
+    margin-left: auto;
+}
+
+.main-nav a {
+    padding: 9px 14px;
+    border-radius: 7px;
+
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: var(--gold);
+}
+
+.main-nav a.active {
+    color: var(--gold);
+}
+
+
+/* Home button */
+
+.main-nav .home-btn {
+    padding: 10px 21px;
+
+    background: var(--gold);
+    border: 1px solid var(--gold);
+
+    color: var(--navy);
+    font-weight: 800;
+
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.12);
+}
+
+.main-nav .home-btn:hover {
+    background: transparent;
+    color: var(--gold);
+}
+
+
+/* ==================================================
+   MAIN CONTENT
+================================================== */
+
+main {
+    width: min(1440px, 90%);
+    margin: 0 auto;
+}
+
+
+/* ==================================================
+   HERO SECTION
+================================================== */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 65px;
+
+    padding: 75px 0 85px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.eyebrow {
+    margin-bottom: 12px;
+
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin-bottom: 22px;
+
+    font-size: clamp(42px, 5vw, 76px);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--gold);
+}
+
+.hero-description {
+    max-width: 550px;
+    margin-bottom: 30px;
+
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+
+/* Hero button */
+
+.gold-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 13px 21px;
+    border: 1px solid var(--gold);
+    border-radius: 7px;
+
+    background: var(--gold);
+    color: var(--navy);
+
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.6px;
+
+    transition: 0.2s ease;
+}
+
+.gold-btn:hover {
+    background: transparent;
+    color: var(--gold);
+    transform: translateY(-2px);
+}
+
+.gold-btn span {
+    font-size: 18px;
+}
+
+
+/* Hero statistics */
+
+.hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    margin-top: 45px;
+    padding-top: 23px;
+
+    border-top: 1px solid var(--border);
+}
+
+.hero-stats div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hero-stats strong {
+    color: var(--gold);
+    font-size: 23px;
+    line-height: 1.3;
+}
+
+.hero-stats span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+
+/* Hero image */
+
+.hero-image {
+    position: relative;
+    min-height: 460px;
+    overflow: hidden;
+
+    border: 1px solid var(--gold-border);
+    border-radius: 14px;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #25466e 0%,
+            #102747 35%,
+            #071329 75%
+        );
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.hero-image img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center top;
+}
+
+.hero-image.image-fallback::before {
+    content: "CR7";
+
+    position: absolute;
+    inset: 0;
+
+    display: grid;
+    place-items: center;
+
+    color: rgba(212, 175, 55, 0.17);
+    font-size: 110px;
+    font-weight: 900;
+}
+
+.hero-image-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(4, 13, 30, 0.98) 0%,
+        rgba(4, 13, 30, 0.45) 38%,
+        transparent 75%
+    );
+}
+
+.hero-image-caption {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    left: 25px;
+    z-index: 2;
+}
+
+.hero-image-caption span {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.hero-image-caption h2 {
+    margin: 6px 0;
+    font-size: clamp(23px, 3vw, 35px);
+    line-height: 1.2;
+}
+
+.hero-image-caption p {
+    color: var(--text);
+    font-size: 13px;
+}
+
+
+/* ==================================================
+   LEGENDS SECTION
+================================================== */
+
+.legends-section {
+    padding: 45px 0 80px;
+    border-top: 1px solid var(--border);
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    font-size: clamp(29px, 4vw, 42px);
+    line-height: 1.2;
+}
+
+.section-description {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+/* Legend count */
+
+.legend-count {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 16px;
+    border: 1px solid var(--gold-border);
+    border-radius: 8px;
+}
+
+.legend-count strong {
+    color: var(--gold);
+    font-size: 25px;
+}
+
+.legend-count span {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+
+/* ==================================================
+   SEARCH AND FILTERS
+================================================== */
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    padding: 0 17px;
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    background: var(--navy-light);
+}
+
+.search-icon {
+    color: var(--gold);
+    font-size: 25px;
+}
+
+.search-box input {
+    width: 100%;
+    min-height: 52px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: var(--white);
+    font-size: 13px;
+}
+
+.search-box input::placeholder {
+    color: #8292aa;
+}
+
+.search-box:focus-within {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.08);
+}
+
+
+/* Filter buttons */
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.filter-btn {
+    padding: 9px 16px;
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    background: var(--navy-light);
+    color: var(--text);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.filter-btn.active {
+    border-color: var(--gold);
+    background: var(--gold);
+    color: var(--navy);
+}
+
+
+/* ==================================================
+   LEGENDS GRID
+================================================== */
+
+.legend-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: start;
+    gap: 22px;
+}
+
+
+/* Individual player card */
+
+.legend-card {
+    min-width: 0;
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: var(--card-bg);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.legend-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold-border);
+
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Player photo */
+
+.player-photo {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(145deg, #18365a, #071329);
+}
+
+.player-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center top;
+
+    transition: transform 0.35s ease;
+}
+
+.legend-card:hover .player-photo img {
+    transform: scale(1.04);
+}
+
+.player-photo.image-fallback::after {
+    content: attr(data-initials);
+
+    position: absolute;
+    inset: 0;
+
+    display: grid;
+    place-items: center;
+
+    color: rgba(212, 175, 55, 0.65);
+    font-size: 55px;
+    font-weight: 900;
+}
+
+.player-number {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+
+    display: grid;
+    place-items: center;
+
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid var(--gold-border);
+    border-radius: 6px;
+
+    background: rgba(6, 20, 46, 0.9);
+    color: var(--gold);
+
+    font-size: 12px;
+    font-weight: 900;
+}
+
+
+/* Card information */
+
+.card-content {
+    padding: 18px;
+}
+
+.player-position {
+    display: inline-block;
+    margin-bottom: 9px;
+
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.player-name {
+    margin-bottom: 5px;
+
+    color: var(--white);
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.player-nickname {
+    margin-bottom: 18px;
+
+    color: var(--muted);
+    font-size: 12px;
+    font-style: italic;
+}
+
+
+/* Achievement and record sections */
+
+.player-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.fact-section {
+    padding-top: 13px;
+    border-top: 1px solid var(--border);
+}
+
+.fact-section h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.fact-section h4 span {
+    font-size: 14px;
+}
+
+.fact-list {
+    padding-left: 16px;
+}
+
+.fact-list li {
+    margin-bottom: 9px;
+    padding-left: 2px;
+
+    color: var(--text);
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+.fact-list li::marker {
+    color: var(--gold);
+}
+
+
+/* Highlighted record */
+
+.record-highlight {
+    margin-top: 13px;
+    padding: 12px;
+
+    border: 1px solid var(--gold-border);
+    border-radius: 7px;
+
+    background: rgba(212, 175, 55, 0.06);
+}
+
+.record-highlight strong {
+    display: block;
+    margin-bottom: 4px;
+
+    color: var(--gold);
+    font-size: 12px;
+}
+
+.record-highlight p {
+    color: var(--text);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* Sources */
+
+.player-source {
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.player-source a {
+    color: var(--gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+
+/* ==================================================
+   NO SEARCH RESULTS
+================================================== */
+
+.no-results {
+    padding: 55px 20px;
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.no-results h3 {
+    margin-bottom: 8px;
+    color: var(--gold);
+}
+
+.no-results p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* ==================================================
+   CLOSING SECTION
+================================================== */
+
+.closing-section {
+    margin-bottom: 75px;
+    padding: 45px 35px;
+
+    border: 1px solid var(--gold-border);
+    border-radius: 13px;
+
+    background:
+        radial-gradient(
+            ellipse at top right,
+            rgba(212, 175, 55, 0.09),
+            transparent 55%
+        ),
+        var(--navy-light);
+
+    text-align: center;
+}
+
+.closing-section h2 {
+    margin-bottom: 15px;
+    font-size: clamp(25px, 4vw, 38px);
+}
+
+.closing-section > p:last-child {
+    max-width: 650px;
+    margin: 0 auto;
+
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.site-footer {
+    padding: 35px 5%;
+
+    border-top: 1px solid var(--border);
+    background: #040d1e;
+
+    text-align: center;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    margin-bottom: 12px;
+
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.footer-brand span {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.site-footer p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.site-footer .footer-note {
+    max-width: 650px;
+    margin: 12px auto;
+    font-size: 10px;
+}
+
+.copyright {
+    margin-top: 18px;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 1100px) {
+
+    .hero {
+        gap: 35px;
+    }
+
+    .hero-image {
+        min-height: 400px;
+    }
+
+    .legend-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .player-photo {
+        height: 270px;
+    }
+
+}
+
+
+/* ==================================================
+   SMALL TABLET
+================================================== */
+
+@media (max-width: 760px) {
+
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .main-nav a {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 50px 0 60px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        min-height: 440px;
+    }
+
+    .hero-stats {
+        gap: 25px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+    }
+
+    .player-photo {
+        height: 230px;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 520px) {
+
+    main {
+        width: 92%;
+    }
+
+    .site-header {
+        padding: 15px 4%;
+    }
+
+    .brand-text strong {
+        font-size: 11px;
+    }
+
+    .main-nav {
+        justify-content: space-between;
+        gap: 3px;
+    }
+
+    .main-nav a {
+        padding: 8px 7px;
+        font-size: 10px;
+    }
+
+    .main-nav .home-btn {
+        padding: 8px 12px;
+    }
+
+    .hero {
+        padding: 38px 0 50px;
+    }
+
+    .hero h1 {
+        font-size: 47px;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-image {
+        min-height: 350px;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .hero-stats strong {
+        font-size: 19px;
+    }
+
+    .hero-stats span {
+        max-width: 100px;
+        font-size: 10px;
+    }
+
+    .legends-section {
+        padding: 35px 0 55px;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .legend-count {
+        padding: 8px 12px;
+    }
+
+    .filter-buttons {
+        gap: 7px;
+    }
+
+    .filter-btn {
+        padding: 8px 11px;
+        font-size: 11px;
+    }
+
+    .legend-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .player-photo {
+        height: 300px;
+    }
+
+    .card-content {
+        padding: 19px;
+    }
+
+    .player-name {
+        font-size: 23px;
+    }
+
+    .fact-list li {
+        font-size: 13px;
+    }
+
+    .closing-section {
+        margin-bottom: 50px;
+        padding: 32px 20px;
+    }
+
+}
+
+
+/* ==================================================
+   ACCESSIBILITY
+================================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

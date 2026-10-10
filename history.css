@@ -1,0 +1,439 @@
+
+/* =====================================================
+   CHAMPIONS LEAGUE HISTORY
+   Main styling
+===================================================== */
+
+:root {
+    --background: #06101f;
+    --background-light: #0c1b30;
+    --card: #10233b;
+    --card-hover: #162e4b;
+    --blue: #2877ff;
+    --blue-light: #6eabff;
+    --gold: #e9c777;
+    --white: #f5f8ff;
+    --muted: #a9b7cb;
+    --border: rgba(255, 255, 255, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    background: var(--background);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+/* ================= HEADER ================= */
+
+.site-header {
+    min-height: 76px;
+    padding: 16px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    background: rgba(4, 12, 25, 0.96);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(14px);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+}
+
+.brand-icon {
+    color: var(--gold);
+    font-size: 27px;
+}
+
+.brand-light {
+    color: var(--blue-light);
+}
+
+.site-header nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.site-header nav a {
+    color: var(--muted);
+    font-size: 13px;
+    transition: color 0.2s;
+}
+
+.site-header nav a:hover {
+    color: var(--white);
+}
+
+/* ================= HERO ================= */
+
+/* Original Inter Milan background image retained */
+
+.hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    padding: 90px 8%;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            #06101f 0%,
+            rgba(6, 16, 31, 0.93) 40%,
+            rgba(6, 16, 31, 0.45) 100%
+        ),
+        url("https://commons.wikimedia.org/wiki/Special:FilePath/1964%E2%80%9365_European_Cup_-_Inter_Milan%27s_Su%C3%A1rez%2C_Facchetti%2C_Peir%C3%B3_and_Bedin_with_the_trophy.jpg")
+        center 35% / cover no-repeat;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 120px;
+    background: linear-gradient(
+        transparent,
+        var(--background)
+    );
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+}
+
+.eyebrow {
+    color: var(--blue-light);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 82px);
+    line-height: 1.04;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero-description {
+    max-width: 610px;
+    margin-top: 25px;
+    color: #d0daea;
+    font-size: 17px;
+}
+
+.primary-button {
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+    background: var(--blue);
+    color: white;
+    padding: 13px 21px;
+    margin-top: 25px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.primary-button:hover {
+    background: #4388ff;
+    transform: translateY(-2px);
+}
+
+.hero-note {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 18px;
+}
+
+/* ================= GENERAL SECTIONS ================= */
+
+.section {
+    padding: 85px 7%;
+}
+
+.intro {
+    max-width: 1050px;
+    margin: auto;
+    text-align: center;
+}
+
+.intro h2,
+.section-heading h2 {
+    font-size: clamp(29px, 4vw, 43px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.intro > p:not(.eyebrow) {
+    max-width: 820px;
+    margin: 0 auto 20px;
+    color: var(--muted);
+}
+
+.text-link {
+    display: inline-block;
+    color: var(--blue-light);
+    font-weight: 700;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.text-link:hover {
+    color: var(--gold);
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px;
+}
+
+.section-heading > p:not(.eyebrow) {
+    color: var(--muted);
+}
+
+/* ================= ERA FILTERS ================= */
+
+.era-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filter {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.filter:hover,
+.filter.active {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: white;
+}
+
+/* ================= SEASON CARDS ================= */
+
+.timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.season-card {
+    padding: 27px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--blue);
+    border-radius: 7px;
+    transition:
+        transform 0.2s,
+        background 0.2s,
+        border-color 0.2s;
+}
+
+.season-card:hover {
+    background: var(--card-hover);
+    transform: translateY(-3px);
+    border-top-color: var(--gold);
+}
+
+.season-card.hidden {
+    display: none;
+}
+
+.season-topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.season-number {
+    color: var(--blue-light);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.season-year {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.season-card h3 {
+    font-size: 22px;
+    line-height: 1.35;
+    margin: 13px 0 10px;
+}
+
+.final-result {
+    padding: 10px 12px;
+    background: rgba(3, 9, 20, 0.45);
+    border-left: 2px solid var(--gold);
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.season-story {
+    color: #c0ccdd;
+    font-size: 14px;
+}
+
+.season-champion {
+    margin-top: 20px;
+    padding-top: 13px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.season-champion span {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 3px;
+}
+
+.history-footnote {
+    color: var(--muted);
+    text-align: center;
+    font-size: 12px;
+    margin-top: 28px;
+}
+
+/* ================= SOURCES ================= */
+
+.source-note {
+    padding: 55px 7%;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.source-note h2 {
+    font-size: 24px;
+}
+
+.source-note p {
+    max-width: 850px;
+    margin: 14px auto;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.source-note a {
+    color: var(--blue-light);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* ================= FOOTER ================= */
+
+.site-footer {
+    padding: 30px 7%;
+    text-align: center;
+    background: #030914;
+    border-top: 1px solid var(--border);
+}
+
+.site-footer p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media (max-width: 1000px) {
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .site-header nav {
+        gap: 12px 18px;
+    }
+
+    .timeline-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .hero {
+        min-height: 560px;
+        padding: 70px 6%;
+        background-position: 58% center;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 60px 5%;
+    }
+
+    .season-card {
+        padding: 21px;
+    }
+}

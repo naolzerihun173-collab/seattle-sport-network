@@ -1,0 +1,345 @@
+
+/* ==================================================
+   1. ROOT VARIABLES
+================================================== */
+
+:root {
+    --background: #07162e;
+    --background-light: #0b1e3b;
+    --card-background: #0b1e3b;
+    --gold: #d7b35a;
+    --white: #ffffff;
+    --text: #c1ccdc;
+    --muted: #8998ae;
+    --border: #334663;
+}
+
+
+/* ==================================================
+   2. RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--white);
+    line-height: 1.8;
+}
+
+
+/* ==================================================
+   3. HERO SECTION
+================================================== */
+
+.hero {
+    min-height: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 70px 25px;
+
+    background:
+        radial-gradient(
+            ellipse at top,
+            #19345a 0%,
+            #0b1e3b 45%,
+            #07162e 100%
+        );
+
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-content {
+    max-width: 850px;
+    width: 100%;
+}
+
+.eyebrow,
+.section-label {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 65px);
+    line-height: 1.2;
+    margin: 22px 0;
+    letter-spacing: -1.5px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero-description {
+    color: var(--text);
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+.hero-line {
+    width: 85px;
+    height: 3px;
+    background: var(--gold);
+    margin: 28px auto 15px;
+}
+
+.year-range {
+    color: var(--gold);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
+
+
+/* ==================================================
+   4. MAIN CONTAINER
+================================================== */
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 65px 25px;
+}
+
+
+/* ==================================================
+   5. INTRODUCTION
+================================================== */
+
+.intro {
+    max-width: 720px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.intro h2,
+.future-note h2 {
+    font-size: clamp(26px, 4vw, 36px);
+    line-height: 1.3;
+    margin: 14px 0;
+}
+
+.intro > p:last-child,
+.future-note > p:last-child {
+    color: var(--text);
+    font-size: 15px;
+}
+
+
+/* ==================================================
+   6. CURRENT-ERA STORIES
+================================================== */
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.moment {
+    position: relative;
+    background: var(--card-background);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px;
+
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.moment:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+}
+
+.moment::before {
+    content: "";
+    display: block;
+    width: 42px;
+    height: 3px;
+    background: var(--gold);
+    margin-bottom: 20px;
+}
+
+.moment-number {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.moment-year {
+    display: block;
+    color: var(--gold);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.moment h3 {
+    font-size: clamp(21px, 3vw, 28px);
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.moment-result {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.moment-story {
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.moment-players {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+}
+
+
+/* ==================================================
+   7. CLOSING SECTION
+================================================== */
+
+.future-note {
+    text-align: center;
+    background: var(--background-light);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 40px 30px;
+    margin-top: 55px;
+}
+
+.future-note h2 {
+    color: var(--white);
+}
+
+.future-note > p:last-child {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+/* ==================================================
+   8. FOOTER
+================================================== */
+
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid var(--border);
+    background: #051126;
+}
+
+.footer p {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+.footer span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   9. RESPONSIVE DESIGN
+================================================== */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 340px;
+        padding: 55px 20px;
+    }
+
+    .hero h1 {
+        letter-spacing: -0.5px;
+    }
+
+    .container {
+        padding: 45px 15px;
+    }
+
+    .moment {
+        padding: 22px 18px;
+    }
+
+    .moment h3 {
+        font-size: 22px;
+    }
+
+    .moment-story {
+        font-size: 14px;
+    }
+
+    .future-note {
+        padding: 30px 20px;
+    }
+}
+
+/* ==================================================
+   HOME BUTTON
+================================================== */
+
+.top-navigation {
+    padding: 18px 5%;
+    background: #051126;
+    border-bottom: 1px solid #334663;
+}
+
+.home-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 17px;
+    color: #d7b35a;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    border: 1px solid #334663;
+    border-radius: 6px;
+    transition: 0.25s ease;
+}
+
+.home-button:hover {
+    background: #0b1e3b;
+    border-color: #d7b35a;
+    color: #ffffff;
+}
+
+.home-icon {
+    font-size: 20px;
+    line-height: 1;
+}
